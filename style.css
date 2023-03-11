@@ -1,0 +1,54 @@
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: rgb(24, 24, 24);
+  color: white;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0 0 5px;
+}
+
+.accordion,
+h1 {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.accordion__title {
+  display: block;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: 0.4s ease-in-out;
+  border-top: 1px solid #03cbda;
+}
+
+.accordion__title:hover {
+  color: #daa803;
+}
+
+.accordion__input {
+  width: 0;
+  height: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+
+.accordion__input:checked + .accordion__box {
+  display: block;
+}
+
+.accordion__box {
+  display: none;
+  padding: 10px 15px;
+  text-align: center;
+  cursor: pointer;
+}
