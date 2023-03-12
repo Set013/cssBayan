@@ -32,12 +32,44 @@ body {
   border-top: 1px solid #09bdbd;
 }
 
-#accordion li label span {
-  font-size: 30px;
-  color: white;
+#accordion label {
+  transition: 0.5s;
 }
 
-#accordion label + input[type="radio"] {
+#accordion:hover label {
+  color: orange;
+  transition: 0.5s;
+}
+
+#accordion input:checked ~ label {
+  color: orange;
+}
+
+#accordion:active .accordion__container {
+  opacity: 0.5;
+  transition: 0.7s;
+}
+
+#accordion li label span {
+  font-size: 35px;
+  color: white;
+  transition: 0.5s;
+  color: orange;
+}
+
+span {
+  opacity: 0;
+}
+
+#accordion:hover span {
+  opacity: 1;
+}
+
+.accordion__container:hover {
+  opacity: 100;
+}
+
+#accordion input[type="radio"] {
   display: none;
 }
 
@@ -48,12 +80,18 @@ body {
   overflow: hidden;
   transition: max-height 0.5s;
   cursor: pointer;
+  transition: 1s;
 }
 
-#accordion label + input[type="radio"]:checked + .content {
+#accordion input[type="radio"]:checked + label + .content {
   max-height: 800px;
 }
 
-input[type="radio"]:checked + label span {
-  transform: rotate(45deg);
+input[type="radio"]:checked + label > span {
+  transform: rotate(225deg);
+  transition: 0.8s;
+}
+
+.accordion__mem__1 {
+  border-radius: 8px;
 }
