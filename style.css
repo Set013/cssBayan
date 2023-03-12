@@ -6,16 +6,15 @@
 }
 
 body {
-  font-size: 16px;
   line-height: 1.5;
   background-color: rgb(24, 24, 24);
   color: white;
-  margin: 20px auto;
-  max-width: 800px;
+  margin: 1vw auto;
+  max-width: 50%;
 }
 
 #accordion {
-  width: 800px;
+  width: 100%;
 }
 
 #accordion li {
@@ -24,12 +23,12 @@ body {
 }
 
 #accordion li label {
-  padding: 10px;
+  padding: 1%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-  border-top: 1px solid #09bdbd;
+  border-top: 0.2em solid #09bdbd;
 }
 
 #accordion label {
@@ -51,7 +50,7 @@ body {
 }
 
 #accordion li label span {
-  font-size: 35px;
+  font-size: 2em;
   color: white;
   transition: 0.5s;
   color: orange;
@@ -74,8 +73,7 @@ span {
 }
 
 #accordion .content {
-  padding: 0 10px;
-  line-height: 26px;
+  padding: 0 2%;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s;
@@ -84,7 +82,7 @@ span {
 }
 
 #accordion input[type="radio"]:checked + label + .content {
-  max-height: 800px;
+  max-height: 35em;
 }
 
 input[type="radio"]:checked + label > span {
@@ -93,5 +91,85 @@ input[type="radio"]:checked + label > span {
 }
 
 .accordion__mem__1 {
-  border-radius: 8px;
+  border-radius: 1em;
+}
+
+#accordion label:checked + input label .accordion__mem__1 {
+  width: 50%;
+  height: 50%;
+}
+
+#accordion:hover:has(label:not(:checked)) input .accordion__mem__1 {
+  width: 50%;
+  height: 50%;
+}
+
+@media (min-width: 820px) and (max-width: 1439px) {
+  body {
+    font-size: 80%;
+  }
+
+  h1 {
+    margin: 1.25rem auto;
+    width: 75vw;
+    transition: 0.5s;
+  }
+
+  .accordion__container {
+    width: 50vw;
+    transition: 0.5s;
+    margin: auto;
+  }
+
+  #accordion li label,
+  #accordion .content,
+  #accordion,
+  .content,
+  body,
+  .accordion__mem__1 {
+    cursor: none;
+  }
+  .accordion__mem__1 {
+    width: 66%;
+    height: 66%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 819px) {
+  body {
+    font-size: 20%;
+  }
+
+  .accordion__mem__1 {
+    width: 71%;
+    height: 71%;
+  }
+
+  #accordion li label,
+  #accordion .content,
+  #accordion,
+  .content,
+  body,
+  .accordion__mem__1 {
+    cursor: none;
+  }
+
+  h1 {
+    width: 50vw;
+    transition: 0.5s;
+  }
+
+  .accordion__container {
+    width: 50vw;
+    transition: 0.5s;
+    margin: auto;
+  }
+
+  #accordion {
+    width: 100%;
+  }
+
+  #accordion li label {
+    padding: 0;
+  }
 }
